@@ -5,14 +5,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        num_indices = {}
-        
+        result = {}
         for i, num in enumerate(nums):
-            complement = target - num
+            true_num = target - num
+            if true_num in result:
+                return [result[true_num],i]
 
-            if complement in num_indices:
-                return [num_indices[complement], i]
-
-            num_indices[num] = i
-        
-        return []
+            result[num] = i    
+            
