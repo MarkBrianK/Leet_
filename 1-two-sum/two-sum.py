@@ -6,10 +6,15 @@ class Solution(object):
         :rtype: List[int]
         """
         result = {}
-        for i, num in enumerate(nums):
-            true_num = target - num
-            if true_num in result:
-                return [result[true_num],i]
 
-            result[num] = i    
+        for i, num in enumerate(nums):
+            number = target - num
+
+            if number in result:
+                return [result[number], i]
+
+            result[num] = i
+
+        return []
             
+        
